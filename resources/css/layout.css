@@ -465,6 +465,7 @@ p {
   right: -15%;
   top: 2.4rem;
   transition: var(--TRANSITION);
+  z-index: 998;
 }
 
 @media screen and (min-width: 48em) {
