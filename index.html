@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>Home &mdash; StudySync</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./resources/css/layout.css" />
+    <link rel="stylesheet" href="./resources/css/style.css" />
+    <!-- js -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navMenuBtn = document.querySelector("#nav__toggle__btn");
+        const navBarEl = document.querySelector("#nav__bar");
+        const copyrightYearEl = document.querySelector("#copyright__year");
+
+        const sectionELs = document.querySelectorAll(".section__animation");
+
+        for (const el of sectionELs) {
+          const obsOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1,
+          };
+          const obsCallback = (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.animationName = "slideFromBottomClear";
+              }
+            });
+          };
+          const observer = new IntersectionObserver(obsCallback, obsOptions);
+          observer.observe(el);
+        }
+
+        navMenuBtn.addEventListener("click", () => {
+          navBarEl.classList.toggle("nav__open");
+        });
+
+        copyrightYearEl.textContent = new Date().getFullYear();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- start of header -->
+    <header class="header" id="nav__bar">
+      <!-- start of navbar -->
+      <nav class="navbar">
+        <div class="navbar__container container">
+          <div class="logo__container">
+            <a href="index.html" class="nav__logo__link">
+              <img
+                class="nav__logo"
+                src="./resources/images/StudySynLogo.svg"
+                height="35px"
+                width="35px"
+                alt="main logo"
+              />
+
+              <span class="brand__name"
+                >Study<span class="brand__name__accent">Sync</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- start of nav list -->
+          <ul class="nav__list">
+            <!-- start of nav item  -->
+            <li class="nav__item">
+              <a href="#" class="nav__link active"> Home </a>
+            </li>
+            <!-- end of nav item  -->
+            <!-- start of nav item  -->
+            <li class="nav__item">
+              <a href="#" class="nav__link"> Features </a>
+            </li>
+            <!-- end of nav item  -->
+            <!-- start of nav item  -->
+            <li class="nav__item">
+              <a href="#" class="nav__link"> Pricing </a>
+            </li>
+            <!-- end of nav item  -->
+            <!-- start of nav item  -->
+            <li class="nav__item">
+              <a href="#" class="nav__link"> Blog </a>
+            </li>
+            <!-- end of nav item  -->
+            <!-- start of nav item  -->
+            <li class="nav__item">
+              <a href="#" class="nav__link"> About </a>
+            </li>
+            <!-- end of nav item  -->
+          </ul>
+          <!-- end of nav list -->
+
+          <!-- nav user action  -->
+          <ul class="nav__action__list">
+            <li class="cta__action">
+              <a href="" class="nav__link cta__action__link"> Contact Us </a>
+            </li>
+
+            <li class="nav__action toggle__menu__action">
+              <!-- hamburger icon/ mbl menu icon -->
+              <button
+                id="nav__toggle__btn"
+                class="toggle__menu"
+                aria-label="toggle menu button"
+              >
+                <!-- start of menu icon -->
+                <div class="menu__icon">
+                  <div>&nbsp;</div>
+                </div>
+                <!-- hamburger icon/ mbl menu icon -->
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- end of navbar -->
+
+      <!-- mobile nav background overlay  -->
+      <div
+        class="nav__background__overlay"
+        aria-label="mobile nav menu background color overlay"
+      ></div>
+      <!-- end of nav background overlay  -->
+    </header>
+    <!-- end of header -->
+
+    <!-- start of main content -->
+    <main>
+      <!-- start of hero section -->
+      <section class="hero">
+        <div class="hero__container container">
+          <!-- start of hero__text__container -->
+          <article class="hero__text__container">
+            <!-- start of hero__header -->
+            <header class="hero__header">
+              <!-- start of hero__sub__title -->
+              <p class="hero__sub__title">Very proud to introduce</p>
+              <!-- end of hero__sub__title -->
+              <!-- start of hero__title -->
+              <h1 class="hero__title">
+                Seamless Learning for Brighter Futures
+              </h1>
+              <!-- end of hero__title -->
+            </header>
+            <!-- end of hero__header -->
+            <!-- start of hero__main__container -->
+            <div class="hero__main__container">
+              <!-- start of hero__text -->
+              <p class="hero__text">
+                Our innovative platform offers an effortless and seamless
+                approach to learning, empowering students of all ages to achieve
+                brighter futures. Join us on a transformative journey to
+                simplify education and unlock your full potential.
+              </p>
+              <!-- end of hero__text -->
+            </div>
+            <!-- end of hero__main__container -->
+
+            <!-- start of hero__footer -->
+            <footer class="hero__footer">
+              <!-- start of hero__cta__btn -->
+              <a href="#" class="btn hero__cta__btn">Start Now</a>
+              <!-- end of hero__cta__btn -->
+              <!-- start of hero__btn -->
+              <a href="#" class="btn hero__btn">Take Tour</a>
+              <!-- end of hero__btn -->
+            </footer>
+            <!-- end of hero__footer -->
+          </article>
+          <!-- end of hero__text__container -->
+          <!-- start of hero__img__container -->
+          <figure class="hero__img__container">
+            <img
+              class="hero__img"
+              src="./resources/images/hero-img.jpg"
+              alt="hero image"
+            />
+          </figure>
+          <!-- end of hero__img__container -->
+        </div>
+      </section>
+      <!-- end of hero section -->
+
+      <!-- start of section partners -->
+      <section class="partners section__animation">
+        <!-- start of partners container -->
+        <div class="partners__conatiner container">
+          <!-- start of partners header -->
+          <header>
+            <!--    start of partners title -->
+            <h2 class="partners__title">Trusted by the best</h2>
+            <!--    end of partners title -->
+          </header>
+          <!-- start of main content -->
+          <div class="partners__main__content">
+            <!-- start of partners list -->
+            <ul class="partners__list">
+              <!-- start of partners__item__container -->
+              <li class="partner__item__container">
+                <!-- start of partner__item -->
+                <figure class="partner__item">
+                  <!-- partner logo -->
+                  <img
+                    class="partner__icon"
+                    src="./resources/images/Google.svg"
+                    alt="google logo"
+                  />
+                  <!-- end of partner logo -->
+                  <!-- start of partner__item__caption -->
+                  <figcaption class="partner__item__caption">
+                    <p class="partner__item__title">Google</p>
+                  </figcaption>
+                  <!-- end of partner__item__caption -->
+                </figure>
+                <!-- end of partner__items -->
+              </li>
+              <!-- end of partner__item__container -->
+              <!-- start of partner__item__container -->
+              <li class="partner__item__container">
+                <!-- start of partner__items -->
+                <figure class="partner__item">
+                  <!-- partner logo -->
+                  <img
+                    class="partner__icon"
+                    src="./resources/images/Microsoft.svg"
+                    alt="Microsoft logo"
+                  />
+                  <!-- end of partner logo -->
+                  <!-- start of partner__item__caption -->
+                  <figcaption class="partner__item__caption">
+                    <p class="partner__item__title">Microsoft</p>
+                  </figcaption>
+                  <!-- end of partner__item__caption -->
+                </figure>
+                <!-- end of partner__items -->
+              </li>
+              <!-- end of partner__item__container -->
+              <!-- start of partner__item__container -->
+              <li class="partner__item__container">
+                <!-- start of partner__items -->
+                <figure class="partner__item">
+                  <!-- partners logo -->
+                  <img
+                    class="partner__icon"
+                    src="./resources/images/linkedin.svg"
+                    alt="linkedin logo"
+                  />
+                  <!-- end of partner logo -->
+                  <!-- start of partner__item__caption -->
+                  <figcaption class="partner__item__caption">
+                    <p class="partner__item__title">Linkedin</p>
+                  </figcaption>
+                  <!-- end of partner__item__caption -->
+                </figure>
+                <!-- end of partner__items -->
+              </li>
+              <!-- end of partner__item__container -->
+              <!-- start of partner__item__container -->
+              <li class="partner__item__container">
+                <!-- start of partner__items -->
+                <figure class="partner__item">
+                  <!-- partner logo -->
+                  <img
+                    class="partner__icon"
+                    src="./resources/images/VectorEdu.svg"
+                    alt="VectorEdu logo"
+                  />
+                  <!-- end of partner logo -->
+                  <!-- start of partner__item__caption -->
+                  <figcaption class="partner__item__caption">
+                    <p class="partner__item__title">VectorEdu</p>
+                  </figcaption>
+                  <!-- end of partner__item__caption -->
+                </figure>
+                <!-- end of partner__items -->
+              </li>
+              <!-- end of partner__item__container -->
+            </ul>
+            <!-- end of partner list -->
+          </div>
+          <!-- end of main content -->
+        </div>
+      </section>
+      <!-- end of section partners -->
+
+      <!-- start of features -->
+      <section class="features section__animation">
+        <!-- start of features container -->
+        <div class="features__container">
+          <!-- start of features header -->
+          <header>
+            <!-- start of features title -->
+            <h2 class="features__title">Our competitive advantage</h2>
+            <!-- end of features title -->
+          </header>
+          <!-- end of features header -->
+          <!-- start of features main content -->
+          <div class="features__main__content">
+            <!-- start to feature text -->
+            <p class="features__text">
+              This is a section of some simple filler text, also known as
+              placeholder text. It shares some characteristics of real written
+              text but is random or otherwise generated.
+            </p>
+            <!-- end of features text -->
+            <!-- start of feature list  -->
+            <ul class="features__list">
+              <!-- start of feature item container -->
+              <li class="feature__item__container">
+                <!-- start of feature item -->
+                <article class="feature__item">
+                  <!-- start of feature item header -->
+                  <header>
+                    <figure class="feature__img__container">
+                      <img
+                        class="feature__img"
+                        src="./resources/images/PersonalizedLearn.svg"
+                        alt=""
+                      />
+                    </figure>
+                    <h3 class="feature__title">Personalized Learning</h3>
+                  </header>
+                  <!-- end of feature item header -->
+                  <!-- start of feature item text -->
+                  <p class="feature__text">
+                    Offer tailored learning experiences through AI and machine
+                    learning to cater to individual student needs.
+                  </p>
+                  <!-- end of feature item text -->
+                </article>
+                <!-- end of feature item -->
+              </li>
+              <!-- end of feature item container -->
+              <!-- start of feature item container -->
+              <li class="feature__item__container">
+                <!-- start of feature item -->
+                <article class="feature__item">
+                  <!-- start of feature item header -->
+                  <header>
+                    <figure class="feature__img__container">
+                      <img
+                        class="feature__img"
+                        src="./resources/images/Affordability.svg"
+                        alt=""
+                      />
+                    </figure>
+                    <h3 class="feature__title">Affordability</h3>
+                  </header>
+                  <!-- end of feature item header -->
+                  <!-- start of feature item text -->
+                  <p class="feature__text">
+                    Provide high-quality education at an affordable price point,
+                    making it accessible to a broader audience.
+                  </p>
+                  <!-- end of feature item text -->
+                </article>
+                <!-- end of feature item -->
+              </li>
+              <!-- end of feature item container -->
+              <!-- start of feature item container -->
+              <li class="feature__item__container">
+                <!-- start of feature item -->
+                <article class="feature__item">
+                  <!-- start of feature item header -->
+                  <header>
+                    <figure class="feature__img__container">
+                      <img
+                        class="feature__img"
+                        src="./resources/images/IndustryPatner.svg"
+                        alt=""
+                      />
+                    </figure>
+                    <h3 class="feature__title">Industry Partnerships</h3>
+                  </header>
+                  <!-- end of feature item header -->
+                  <!-- start of feature item text -->
+                  <p class="feature__text">
+                    Collaborate with well-known companies and institutions to
+                    offer accredited courses and certifications, adding
+                    credibility to your offerings.
+                  </p>
+                  <!-- end of feature item text -->
+                </article>
+                <!-- end of feature item -->
+              </li>
+              <!-- end of feature item container -->
+              <!-- start of feature item container -->
+              <li class="feature__item__container">
+                <!-- start of feature item -->
+                <article class="feature__item">
+                  <!-- start of feature item header -->
+                  <header>
+                    <figure class="feature__img__container">
+                      <img
+                        class="feature__img"
+                        src="./resources/images/InnovativeTech.svg"
+                        alt=""
+                      />
+                    </figure>
+                    <h3 class="feature__title">Innovative Technology</h3>
+                  </header>
+                  <!-- end of feature item header -->
+                  <!-- start of feature item text -->
+                  <p class="feature__text">
+                    Utilize cutting-edge technology, such as augmented reality
+                    or virtual reality, to create immersive learning
+                    experiences.
+                  </p>
+                  <!-- end of feature item text -->
+                </article>
+                <!-- end of feature item -->
+              </li>
+              <!-- end of feature item container -->
+              <!-- start of feature item container -->
+              <li class="feature__item__container">
+                <!-- start of feature item -->
+                <article class="feature__item">
+                  <!-- start of feature item header -->
+                  <header>
+                    <figure class="feature__img__container">
+                      <img
+                        class="feature__img"
+                        src="./resources/images/IndustryPatner.svg"
+                        alt=""
+                      />
+                    </figure>
+                    <h3 class="feature__title">Responsive Support</h3>
+                  </header>
+                  <!-- end of feature item header -->
+                  <!-- start of feature item text -->
+                  <p class="feature__text">
+                    Provide exceptional customer support and assistance to
+                    students and educators.
+                  </p>
+                  <!-- end of feature item text -->
+                </article>
+                <!-- end of feature item -->
+              </li>
+              <!-- end of feature item container -->
+              <!-- start of feature item container -->
+              <li class="feature__item__container">
+                <!-- start of feature item -->
+                <article class="feature__item">
+                  <!-- start of feature item header -->
+                  <header>
+                    <figure class="feature__img__container">
+                      <img
+                        class="feature__img"
+                        src="./resources/images/Analytics.svg"
+                        alt=""
+                      />
+                    </figure>
+                    <h3 class="feature__title">Analytics and Insights</h3>
+                  </header>
+                  <!-- end of feature item header -->
+                  <!-- start of feature item text -->
+                  <p class="feature__text">
+                    Offer detailed progress tracking and analytics to help
+                    students and teachers monitor performance and make
+                    data-driven decisions.
+                  </p>
+                  <!-- end of feature item text -->
+                </article>
+                <!-- end of feature item -->
+              </li>
+              <!-- end of feature item container -->
+            </ul>
+          </div>
+        </div>
+        <!-- end of features container -->
+      </section>
+      <!-- end of features -->
+
+      <!-- start of testimonials -->
+      <section class="testimonials section__animation">
+        <!-- start of testimonials container -->
+        <div class="testimonials__container container">
+          <!-- start of testimonials header -->
+          <header>
+            <!-- start of testimonials title -->
+            <h2 class="testimonials__title">What our customers say</h2>
+            <!-- end of testimonials title -->
+          </header>
+          <!-- end of testimonials header -->
+          <!-- start of testimonials main content -->
+          <div class="testimonials__main__content">
+            <!-- start of testimonials list -->
+            <ul class="testimonials__list">
+              <!-- start of testimonials item container-->
+              <li class="testimonial__item__contaier">
+                <!-- start of testimonials item -->
+                <article class="testimonial__item">
+                  <!-- start of testimonials quote -->
+                  <blockquote class="testimonial__quote">
+                    <p>
+                      StudySync revolutionized my classroom! Engaging content
+                      and teacher resources make learning enjoyable. Highly
+                      recommended for educators.
+                    </p>
+                  </blockquote>
+                  <!-- end of testimonials quote -->
+                  <!-- start of testimonials footer -->
+                  <footer>
+                    <!-- start of testimonials img container -->
+                    <div class="testimonial__img__container">
+                      <img
+                        class="testimonial__author__img"
+                        src="./resources/images/avatar1.png"
+                        alt=""
+                      />
+                    </div>
+                    <!-- end of testimonials img container -->
+                    <!-- start of testimonials author name -->
+                    <p class="testimonial__author__name">
+                      <cite> Sarah Johnson </cite>
+                    </p>
+                    <!-- end of testimonials author name -->
+                    <!-- start of testimonials author position -->
+                    <p class="testimonial__author__position">
+                      8th Grade English Teacher
+                    </p>
+                    <!-- end of testimonials author position -->
+                  </footer>
+                  <!-- end of testimonials footer -->
+                </article>
+
+                <!-- end of testimonials item  -->
+              </li>
+              <!-- end of testimonials item container -->
+              <!-- start of testimonials item container-->
+              <li class="testimonial__item__contaier">
+                <!-- start of testimonials item -->
+                <article class="testimonial__item">
+                  <!-- start of testimonials quote -->
+                  <blockquote class="testimonial__quote">
+                    <p>
+                      StudySync transformed our family's learning journey. Safe,
+                      interactive, and progress tracking features are invaluable
+                      for parents.
+                    </p>
+                  </blockquote>
+                  <!-- end of testimonials quote -->
+                  <!-- start of testimonials footer -->
+                  <footer>
+                    <!-- start of testimonials img container -->
+                    <figure class="testimonial__img__container">
+                      <img
+                        class="testimonial__author__img"
+                        src="./resources/images/avatar2.png"
+                        alt=""
+                      />
+                    </figure>
+                    <!-- end of testimonials img container -->
+                    <!-- start of testimonials author name -->
+                    <p class="testimonial__author__name">
+                      <cite> Sarah Johnson </cite>
+                    </p>
+                    <!-- end of testimonials author name -->
+                    <!-- start of testimonials author position -->
+                    <p class="testimonial__author__position">
+                      8th Grade English Teacher
+                    </p>
+                    <!-- end of testimonials author position -->
+                  </footer>
+                  <!-- end of testimonials footer -->
+                </article>
+
+                <!-- end of testimonials item  -->
+              </li>
+              <!-- end of testimonials item container -->
+              <!-- start of testimonials item container-->
+              <li class="testimonial__item__contaier">
+                <!-- start of testimonials item -->
+                <article class="testimonial__item">
+                  <!-- start of testimonials quote -->
+                  <blockquote class="testimonial__quote">
+                    <p>
+                      StudySync, a true game-changer! Flexible content, tailored
+                      assessments, and excellent support. Integral to our school
+                      district's success.
+                    </p>
+                  </blockquote>
+                  <!-- end of testimonials quote -->
+                  <!-- start of testimonials footer -->
+                  <footer>
+                    <!-- start of testimonials img container -->
+                    <div class="testimonial__img__container">
+                      <img
+                        class="testimonial__author__img"
+                        src="./resources/images/avatar3.png"
+                        alt=""
+                      />
+                    </div>
+                    <!-- end of testimonials img container -->
+                    <!-- start of testimonials author name -->
+                    <p class="testimonial__author__name">
+                      <cite> Sarah Johnson </cite>
+                    </p>
+                    <!-- end of testimonials author name -->
+                    <!-- start of testimonials author position -->
+                    <p class="testimonial__author__position">
+                      8th Grade English Teacher
+                    </p>
+                    <!-- end of testimonials author position -->
+                  </footer>
+                  <!-- end of testimonials footer -->
+                </article>
+
+                <!-- end of testimonials item  -->
+              </li>
+              <!-- end of testimonials item container -->
+            </ul>
+            <!-- end of testimonials list -->
+          </div>
+          <!-- end of testimonials main content -->
+        </div>
+        <!-- end of testimonials container -->
+      </section>
+      <!-- end of testimonials -->
+
+      <!-- start of newsletter -->
+      <section class="newsletter section__animation">
+        <!-- start of newsletter container -->
+        <div class="newsletter__container container">
+          <!-- start of newsletter image container -->
+          <figure class="newsletter__img__container">
+            <img
+              class="newsletter__img"
+              src="./resources/images/img.png"
+              alt="newsletter"
+              loading="lazy"
+            />
+          </figure>
+          <!-- end of newsletter image container -->
+          <!-- start of newsletter text container -->
+          <article class="newsletter__text__container">
+            <div>
+              <!-- start of newsletter header -->
+              <header class="newsletter__header">
+                <h2 class="newsletter__title">Get the latest updates</h2>
+              </header>
+              <!-- end of newsletter header -->
+              <!-- start of newsletter main content -->
+              <div class="newsletter__main__content">
+                <p class="newsletter__text">Sign up for our newsletter</p>
+
+                <!-- start of newsletter form -->
+                <form class="newsletter__form">
+                  <input
+                    class="newsletter__input"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                  <button class="btn newsletter__btn" type="submit">
+                    Subscribe
+                  </button>
+                </form>
+                <!-- end of newsletter form -->
+                <div class="privacy-policy">
+                  <p>
+                    By signing up to our newsletter you agree to our
+                    <a href="#" class="news-link"> Terms of Service </a>
+                    and
+                    <a href="#" class="news-link"> Privacy policy </a>
+                  </p>
+                </div>
+              </div>
+              <!-- end of newsletter main content -->
+            </div>
+          </article>
+          <!-- end of newsletter text container -->
+        </div>
+        <!-- end of newsletter container -->
+      </section>
+      <!-- end of newsletter -->
+    </main>
+    <!-- end of main content -->
+
+    <!-- start of footer -->
+    <footer class="footer">
+      <div class="footer__container container">
+        <!-- start of logo container -->
+        <div class="logo__col">
+          <!-- start of logo  -->
+          <div class="footer__logo__container">
+            <a href="index.html" class="main__logo__link">
+              <img
+                class="main__logo"
+                src="./resources/images/StudySynLogo.svg"
+                height="35px"
+                width="35px"
+                alt="main logo"
+              />
+
+              <span class="brand__name"
+                >Study<span class="brand__name__accent">Sync</span>
+              </span>
+            </a>
+          </div>
+          <!-- end of logo  -->
+          <!-- start of text  -->
+          <p class="footer__text">Seamless Learning for Brighter Futures.</p>
+          <!-- end of text  -->
+          <!-- start of social container -->
+          <ul class="social__list">
+            <!-- start of social item -->
+            <li class="social__item">
+              <a class="social-link" href="#">
+                <svg
+                  class="social-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <!-- end of social item -->
+            <!-- start of social item -->
+            <li class="social__item">
+              <a class="social-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="social-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <!-- end of social item -->
+            <!-- start of social item -->
+            <li class="social__item">
+              <a class="social-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="social-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M0 32h214.6v214.6H0V32zm233.4 0H448v214.6H233.4V32zM0 265.4h214.6V480H0V265.4zm233.4 0H448V480H233.4V265.4z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <!-- end of social item -->
+            <!-- start of social item -->
+            <li class="social__item">
+              <a class="social-link">
+                <svg
+                  class="social-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <!-- end of social item -->
+          </ul>
+          <!-- end of social container -->
+        </div>
+        <!-- end of logo container -->
+        <!-- start of footer nav col -->
+        <nav class="nav__col">
+          <div class="footer__title">Products</div>
+          <ul class="footer-links__list">
+            <li>
+              <a href="#overview" class="footer__link">Overview</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Solutions</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Pricing</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Customers</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- end of footer nav col -->
+        <!-- start of footer nav col -->
+
+        <nav class="nav__col">
+          <div class="footer__title">Company</div>
+          <ul class="footer__links-list">
+            <li>
+              <a href="#overview" class="footer__link">About</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Investor Relations</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Jobs</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Press</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- end of footer nav col -->
+        <!-- start of footer nav col -->
+        <nav class="nav__col">
+          <div class="footer__title">Support</div>
+          <ul class="footer__links__list">
+            <li>
+              <a href="#overview" class="footer__link">Contact</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Documentation</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Chat</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- end of footer nav col -->
+        <!-- start of footer nav col -->
+        <nav class="nav__col">
+          <div class="footer__title">Legal</div>
+          <ul class="footer__links__list">
+            <li>
+              <a href="#overview" class="footer__link">Terms of Service</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#overview" class="footer__link">Cookie Settings</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- end of footer nav col -->
+      </div>
+      <div class="copyright__container container">
+        <small class="footer__copyright">
+          © <time id="copyright__year"></time> - Present StudySync. All rights
+          reserved.
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>
